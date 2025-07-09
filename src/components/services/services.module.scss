@@ -1,0 +1,96 @@
+@import "../../styles/variable.scss";
+
+.services {
+    display: flex;
+    overflow-x: auto;
+    column-gap: 30px;
+    padding: 20px;
+
+    
+    &_wrapper{
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        row-gap: 20px;
+
+        @include media-breakpoint($md){
+            max-width: $container_width;
+            margin:0 auto;
+            justify-items: center;
+        }
+    };
+
+    &_title_wrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        max-width: 950px;
+    }
+
+    &_text{    
+        padding-left: 20px;
+        padding-right: 20px;   
+        @include media-breakpoint($md){
+            max-width: 1164px;
+        }     
+    };
+
+    .card{
+        min-width: 240px;
+        max-width: 240px;
+        height: fit-content;
+        padding:40px 30px;
+        border-radius: $border_classic;
+        list-style-type: none;
+        box-shadow: $shadow;
+        display: grid;
+        row-gap: 20px;
+        transition: background-color ease-in-out 0.3s;
+
+        @include media-breakpoint($md){
+            &:hover{
+                cursor: pointer;
+                background-color: $primary_color;
+
+                .card_icon use{
+                    fill:white;
+                }
+            }
+        
+        }
+
+        &_icon{
+            width: 49px;
+            height: 49px;
+
+            use{
+                transition: fill ease-in-out 0.3s;
+            }
+        };
+        &_title,
+        &_price{
+            color:$white;
+            font-family: var(--font-title);
+        }
+
+
+        &_title{
+            font-size:$large;
+        };
+        &_description{
+            font-size: $normal;
+            color:$white;
+            font-family: var(--font-text);
+            overflow:hidden;
+            text-overflow: ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            line-clamp: 5
+        };
+        &_price{
+            font-size: $normal;
+            text-transform: uppercase;
+        };
+    }
+}

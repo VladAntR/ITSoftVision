@@ -1,0 +1,119 @@
+@import "../../styles/variable.scss";
+
+.faq{
+    display: grid;
+    row-gap: 1.25em;
+
+    @include media-breakpoint($md){
+        max-width: $container_width;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: $shadow;
+        padding:3.125em 0 ;
+    };
+
+    &_title{
+        @include media-breakpoint($md){
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }; 
+    &_text{
+        text-align: center;
+        padding:0 1.25em;
+        text-transform: uppercase;
+        line-height: 20px;
+        font-size:$normal;
+        font-family: var(--font-text);
+
+        @include media-breakpoint($md){
+            max-width: 75em;
+            margin: 0 auto;
+            line-height: 40px;
+        }
+    }; 
+
+    &_wrapper{
+        width: 100%;
+        padding: 0 1.25em;
+        display: grid;
+        row-gap: 0.938em;
+
+        @include media-breakpoint($md){
+            max-width: 75em;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+    };
+
+    &_question{
+        list-style-type: none;
+        position: relative;
+        padding-left:0.625em;
+        box-shadow: $shadow;
+        border-radius: $border_classic;
+
+        &::before{
+            content: "";
+            width: 2px;
+            height: 100%;
+            background-color: $primary_color;
+            display: block;
+            position: absolute;
+            left: 0;
+        }
+
+        &__title{
+            padding:0.625em;
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            h4{
+                font-size: $normal;
+                font-family: var(--font-title);
+                color:$white;
+                font-weight: 400;
+                text-transform: uppercase;
+                max-width: 17.2em;
+                @include media-breakpoint($md){
+                    max-width: 100%;
+                }
+            }
+
+            span{
+                font-size: 2.5em;
+                color:$primary_color;
+                transition: transform ease-in-out 0.3s;
+            }
+
+            span.active{
+                transform: rotate(135deg);
+            }
+
+        }; 
+        &__text{
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            font-size:$small;
+            font-family: var(--font-text);
+            color:$white;
+            text-transform: uppercase;
+            line-height: 30px;
+            transition: all ease 0.3s;
+        };
+
+        &__text.active{
+            opacity: 1;
+            visibility: visible;
+            height: fit-content;
+            
+            @include media-breakpoint($md){
+                padding-bottom: 15px;
+            }
+        }
+    }; 
+}

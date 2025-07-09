@@ -1,0 +1,159 @@
+@import "../../styles/variable.scss";
+
+.contact{
+    display: grid;
+    row-gap:6.25em;
+
+    @include media-breakpoint($md){
+        max-width: $container_width;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3.125em;
+    }
+
+    &_us,
+    &_form{   
+        &_title{
+            h1{
+                text-wrap:nowrap;
+                
+                @include media-breakpoint($md){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &_us{
+        display: grid;
+        row-gap: 0.625em;
+        
+        &_text{
+            font-weight: 400;
+            padding:0 1.625em;
+
+            @include media-breakpoint($md){
+                padding:0 0.625em;
+            }
+        }
+
+        &_info{
+            display: grid;
+            justify-content: center;
+            row-gap: 0.625em;
+            padding:0 1.625em;
+
+            @include media-breakpoint($md){
+                padding:0 0.625em;
+            }
+            
+            li{
+                display: grid;
+                row-gap: 0.313em;
+                list-style-type:none;
+                text-align: center;
+                
+                .info{
+                    
+                    &_label{
+                        color:$secondary_color;
+                        font-size: $normal;
+                        font-family: var(--font-title);
+                        font-weight: 400;
+                        text-transform: uppercase
+                    };
+    
+                    &_text{
+                        color:$white;
+                        font-family: var(--font-text);
+                        font-size: $normal;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }        
+    }
+
+    &_form{
+        display: grid;
+        row-gap: 1.25em;
+
+        @include media-breakpoint($md){
+            padding:1.375em 1.75em;
+            box-shadow: $shadow;
+            row-gap: 2.188em;
+        }
+        
+        &__wrapper{
+            padding:0 1.625em;
+            display: grid;
+            row-gap: 0.938em;
+            @include media-breakpoint($md){
+                padding:0;
+                row-gap: 1.25em;
+            }
+
+
+            input, 
+            textarea{
+                background-color: transparent;
+                width: 100%;
+                padding: 0.75em 0.625em;
+                box-shadow: none;
+                border:none;
+                border-bottom: solid 1px #406D80;
+                color:$white;
+                transition:border ease-in-out 0.3s;
+
+                
+                @include media-breakpoint($md){
+                    cursor: pointer;
+
+                    &:hover{
+                        border-bottom: solid 1px $primary_color;
+                    }
+                }
+                
+                &::placeholder{
+                    text-transform: uppercase;
+                    color:$white;
+                    opacity: 0.7;
+                }
+
+                &:focus-visible{
+                    outline:none;
+                    border-bottom: solid 1px $primary_color;
+                }
+            }
+
+        }
+
+        &__btn{
+            width: 14.375em;
+            height: 3.75em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            color:$white;
+            font-size:$normal;
+            font-family: var(--font-text);
+            background-color: transparent;
+            box-shadow: $shadow;
+            border:none;
+            border-radius: $border_classic;
+            margin: 0 auto;
+
+            @include media-breakpoint($md){
+                margin-top:0.938em;
+                transition: background-color ease-in-out 0.3s;
+                cursor: pointer;
+
+                &:hover{
+                    background-color:$primary_color;
+                }
+            }
+        }
+    }
+
+}

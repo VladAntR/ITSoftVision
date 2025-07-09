@@ -1,0 +1,235 @@
+@import '../../styles/variable.scss';
+
+
+.cases{
+    &_title{
+        @include media-breakpoint($md){
+            display: none;
+        }
+    };
+
+    .menu{
+        padding:20px;
+        width: 100%;
+        overflow: hidden;
+
+        &_wrapper{
+            display: flex;
+            max-width: 100%;
+            overflow-x: auto;
+            column-gap: 20px;
+            scrollbar-width: none;
+            @include media-breakpoint($md){
+                justify-content: end;
+                cursor: pointer;
+            }
+        };
+        &_item{
+            list-style-type: none;
+            text-transform: uppercase;
+            font-family: var(--font-text);
+            font-size: $normal;
+            letter-spacing: 0.163em;
+            transition: all ease-in-out 0.3s;
+            padding-bottom: 7px;
+
+            &::after{
+                content: '';
+                width: 0;
+                height: 2px;
+                display: block;
+                background-color: $primary_color;
+                margin-top: 6px;
+                transition: width ease-in-out 0.3s;
+            }
+            
+            @include media-breakpoint($md){
+                transition: all ease-in-out 0.3s;
+                &:hover{
+                    color: $primary_color;
+                    
+                    &::after{
+                        width: 100%;
+                    }
+                }
+            }
+        };
+
+        &_item.active{
+            color:$primary_color;
+
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+};
+
+/********************
+        Slider 
+********************/
+.slide{
+    img{
+        width: 100% !important;
+        height: 100% !important;
+        transition: width ease-in-out 0.3s;
+    }
+    
+    h3,p,a{
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.slider-container.slick-track{
+    display: flex !important;  
+}
+
+.slick-list{
+    overflow: hidden;
+}
+
+.slick-slider .slick-arrow{
+    display: none !important;
+}
+
+.slider-container .slick-slide {
+    height: 385px ;
+    display: flex !important;
+    align-items: center;
+    filter: grayscale(1);
+    transition: all ease-in-out 0.3s;
+}
+
+.slider-container .slick-slide.slick-current{
+    transform: scale(1.2);
+    filter: grayscale(0);
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+}
+
+.slider-container .slick-slide.slick-current h3,
+.slider-container .slick-slide.slick-current p,
+.slider-container .slick-slide.slick-current a{
+    visibility: visible;
+    opacity: 1;
+}
+
+.slide {
+    h3{
+        margin-top: 20px;
+        text-align: center;
+        font-size: $large;
+        font-family: var(--font-title);
+        font-weight: 400;
+    }
+
+    p{
+        text-align: center;
+        font-size:$small;
+        font-family: var(--font-text);
+        font-weight: 400;
+        margin:20px 0;
+    }
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 196px;
+        height: 49px;
+        background-color: $background;
+        color:$white;
+        border-radius: 5px;
+        font-size: $medium;
+        font-family: var(--font-text);
+        box-shadow: $shadow;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+@include media-breakpoint($md){
+    .slider-container .slick-slide {
+        height: 680px ;
+        display: flex !important;
+        align-items: center;
+        filter: grayscale(1);
+        transition: all ease-in-out 0.3s;
+    }
+    
+    .slider-container .slick-slide.slick-current{
+        transform: scale(1.3);
+        filter: grayscale(0);
+        position: relative;
+        z-index: 1;
+    }
+
+    .slick-slider .slick-arrow{
+        display: block;
+        position: absolute;
+        top:0;
+        height: 100%;
+        width: 28%;
+        z-index: 3;
+        opacity: 0;
+        cursor: pointer;
+    };
+
+    .slick-slider .slick-arrow.slick-next{
+        right: 0;
+    }
+    .slick-slider .slick-arrow.slick-prev{
+        left: 0;
+    }
+
+
+    .slide {
+        h3{
+            margin-top: 30px;
+            text-align: center;
+            font-size: $title_size;
+            font-family: var(--font-title);
+            font-weight: 400;
+        }
+
+        p{
+            text-align: center;
+            font-size:$normal;
+            font-family: var(--font-text);
+            font-weight: 400;
+            margin:20px 0;
+        }
+
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 196px;
+            height: 49px;
+            background-color: $background;
+            color:$white;
+            border-radius: 5px;
+            font-size: $medium;
+            font-family: var(--font-text);
+            box-shadow: $shadow;
+            margin: 0 auto;
+            transition: background-color ease-in-out 0.3s;
+
+            &:hover{
+                background-color: $primary_color;
+            }
+        }
+    }
+
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+@import "../../styles/variable.scss";
+
+.main_wrapper{
+    background:linear-gradient(-115deg, #2226 30%,  #00b7ff66 80%);
+    height: calc(100vh - 69px);
+    padding-top:69px;
+    display: grid;
+    grid-template-rows: 50vh 30vh;
+    @include media-breakpoint($md){
+        height: 100vh;
+        grid-template-rows: 60vh 30vh;
+    }
+    
+
+    .name_company__wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media-breakpoint($md){
+            align-items: end;
+        }
+
+            .name_company{
+                position: relative;
+                height: 129px;
+                @include media-breakpoint($md){
+                    height: 288px;
+                }
+                
+                .word_it{
+                    font-family: var(--font-title);
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    position: absolute;
+                    top: 10px;
+                    left: 55px;
+                    @include media-breakpoint($md){
+                        font-size: $mobile_nav;
+                        left: 85px;
+                        top: 15px;                
+                    }
+                };
+                .word_soft{
+                    width: 100%;
+                    font-family: var(--font-title);
+                    font-size: 128px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    text-align: center;
+                    @include media-breakpoint($md){
+                        font-size: 200px;
+                    }
+
+                };
+                .word_vision{
+                    font-family: var(--font-title);
+                    font-size: 32px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color:$primary_color;
+                    position: absolute;
+                    bottom: -50px;
+                    right:25px;
+                    @include media-breakpoint($md){
+                        font-size: $mobile_nav;
+                        bottom:30px;
+                        right:40px;
+                    }
+
+                };
+            };
+        }
+
+    .bottom_main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        padding:0 20px 20px;
+
+        @include media-breakpoint($md){
+            max-width: $container_width;
+            margin: 0 auto;
+        }
+
+        .social_media{
+            display: grid;
+            grid-template-rows: 30px 30px 30px;
+            row-gap: 5px;
+            align-content: center;
+            
+            .social_media__icon{
+                width: 100%;
+                height: 100%;
+                max-width: 30px;
+                max-height: 30px;
+
+            }
+        };
+
+        .button_request__wrapper{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .button_request{
+            font-size:$medium;
+            font-family: var(--font-text);
+            text-transform: uppercase;
+            width: fit-content;
+            height: fit-content;
+            position: absolute;
+            bottom: 20%;
+            right: -60px;
+            transform: rotate(-90deg);
+
+
+            @include media-breakpoint($md){
+                bottom: 30%;
+                transition: color ease-in-out 0.3s;
+
+                &:hover{
+                    color:$primary_color;
+                }
+            }
+        };
+    }
+}

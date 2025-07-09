@@ -1,0 +1,57 @@
+$shadow: 0 0 15px 5px rgba(#000, 0.5) !default;
+$background:#222222;
+$white:#ffffff;
+$primary_color:#00B7FF;
+$secondary_color:#B1E9FF;
+$text_color:#ffffff;
+$container_width:1440px;
+$gradient:linear-gradient(rgba(34,34,34,0.4),rgba(0,183,255,0.4));
+
+
+//font size
+$micro:10px;
+$small:12px;
+$normal:14px;
+$medium:16px;
+$large:18px;
+$title_size:24;
+$mobile_nav:32px;
+
+//border
+$border_classic:10px;
+$border_rounded:100px;
+
+//breakpoints
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px;
+$xxl:1400px;
+
+@mixin gradient($deg){
+  background: linear-gradient($deg, rgba(34,34,34,0.4),rgba(0,183,255,0.4));
+}
+
+@mixin media-breakpoint($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+%tearing_out {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  %container {
+    max-width: 100%;
+    width: 100%;
+    margin:0 auto;
+    display: flex;
+    padding:20px;
+    
+    @include media-breakpoint($xxl){
+      display: flex;
+      max-width: $container_width;
+    }
+  }

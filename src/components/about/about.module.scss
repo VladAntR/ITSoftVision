@@ -1,0 +1,52 @@
+@import "../../styles/variable.scss";
+
+.about{ 
+    width: 100%;
+
+    @include media-breakpoint($md){
+        max-width: $container_width;
+        margin: 0 auto;
+        box-shadow: $shadow;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &_text__wrapper{
+        width: 100%;
+        padding:20px 20px 0 20px;
+        display: grid;
+        row-gap: 10px;
+
+        @include media-breakpoint($md){
+            grid-template-columns: 1fr 1fr;
+            align-content: center;
+            max-width: 1097px;
+        };
+
+        .about_paragraph{
+            &__1,
+            &__2{             
+                width: 100%;
+   
+                @include media-breakpoint($md){
+                    max-width: 419px;
+                    line-height: 40px;
+                    font-size:$medium;
+                }
+            };
+
+            @include media-breakpoint($md){
+                &__1{
+                    justify-self: start;
+                }
+                &__2{
+                    justify-self: end;
+                }
+            }
+            
+        
+        }
+    }
+}

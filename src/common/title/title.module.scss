@@ -1,0 +1,50 @@
+@import "../../styles/variable.scss";
+
+.title_section{
+    &__wrapper{
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: 35px;
+        @include media-breakpoint($md){
+            max-width: 1097px;
+        }
+
+        .divider_left,
+        .divider_right{
+            position: absolute;
+            display: block;
+            content: "";
+            width: 50%;
+            height: 1px;
+            background-color: $white;
+            top:50%;
+            transform: translateY(-50%,);
+            z-index: 0;
+        }
+        .divider_left{
+            left: 0;
+        };
+        .divider_right{
+            right: 0;
+        };
+    }
+
+    &__title{
+        color:$white;
+        background-color: $background;
+        font-size: $title_size;
+        font-family: var(--font-title);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+        z-index: 2;
+        padding:0 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+}
