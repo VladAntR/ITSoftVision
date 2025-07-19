@@ -27,6 +27,11 @@
     &_us{
         display: grid;
         row-gap: 0.625em;
+        @include media-breakpoint($md){    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
         
         &_text{
             font-weight: 400;
