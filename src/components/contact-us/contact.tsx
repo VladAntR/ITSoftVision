@@ -16,7 +16,7 @@ const ContactUs = () => {
     setStatus('Sending...');
 
     try {
-      const res = await fetch('api/contact', {
+      await fetch('api/contact', {
         method: 'POST',
         body: JSON.stringify({
           name,

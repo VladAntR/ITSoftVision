@@ -3,6 +3,7 @@ import {menu, TMenuItem} from '@/src/services/menu';
 import {useEffect, useState} from 'react';
 import styles from './header.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -35,7 +36,14 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${isOpen ? styles.open : ''} `}>
       <div className={styles.logo_burger}>
-        <img src="/logo.svg" alt="iTSoftVision" />
+        <Image
+          src="/logo.svg"
+          alt="itsoftvision"
+          width={116}
+          height={30}
+          className={styles.logo}
+        />
+
         <div
           className={`${styles.burger_wrapper} ${isOpen ? styles.open : ''}`}
           onClick={() => setIsOpen((prevState: boolean) => !prevState)}>

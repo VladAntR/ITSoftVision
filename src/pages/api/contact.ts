@@ -1,8 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import nodemailer from 'nodemailer';
+import { google } from 'googleapis';
 
-
-const nodemailer = require('nodemailer');
-const { google } = require('googleapis');
 const CLIENT_ID = process.env.CLIENT_ID!;
 const CLIENT_SECRET = process.env.CLIENT_SECRET!;
 const REDIRECT_URL = process.env.REDIRECT_URL!;
@@ -33,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 refreshToken: REFRESH_TOKEN,
                 accessToken,
             },
-        });
+        } as nodemailer.TransportOptions);
 
         const result = await transporter.sendMail({
             from: `Your site <${GMAIL_USER}>`,

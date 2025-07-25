@@ -6,9 +6,13 @@ export type TypeItemMenu = {
 export type TypeSlide = {
     id: number;
     image: string;
-    title?: string;
+    title: string;
     description?: string;
     caseUrl?: string;
+}
+
+export type SliderCasesProps = {
+    items: TypeSlide[];
 }
 
 export const navCases = [

@@ -1,10 +1,11 @@
 import React, {FC} from 'react';
 import 'slick-carousel/slick/slick.css';
-import {TypeSlide} from '@/src/services/cases';
+import {SliderCasesProps, TypeSlide} from '@/src/services/cases';
 import styles from './cases.module.scss';
 import Slider from 'react-slick';
+import Image from 'next/image';
 
-export const SliderCases: FC<any> = data => {
+export const SliderCases: FC<SliderCasesProps> = data => {
   const settings = {
     centerMode: true,
     centerPadding: '0px',
@@ -20,7 +21,7 @@ export const SliderCases: FC<any> = data => {
 
     return (
       <div key={id} className={styles.slide}>
-        <img src={image} alt={title} />
+        <Image src={image} alt={title} width={200} height={200} />
         <h3>{title}</h3>
         <p>{description}</p>
         <a href={caseUrl}>View Case</a>
@@ -32,7 +33,9 @@ export const SliderCases: FC<any> = data => {
     <div className="slider-container">
       <Slider {...settings}>
         {data.items?.length
-          ? data.items.map((item: TypeSlide) => <Slide {...item} />)
+          ? data.items.map((item: TypeSlide) => (
+              <Slide key={item.id} {...item} />
+            ))
           : null}
       </Slider>
     </div>
