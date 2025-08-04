@@ -39,6 +39,32 @@ const ContactUs = () => {
         <div className={styles.contact_us_title}>
           <TitleSection title="Contact Form" />
         </div>
+        <p className={`${styles.contact_us_text} text`}>
+          If you have any questions or want to start a project, feel free to
+          contact us. Our team is ready to provide expert advice and help you
+          find the best IT solutions. We look forward to hearing from you and
+          working together to grow your business. Reach out anytime — we’re here
+          to support you!
+        </p>
+        <ul className={styles.contact_us_info}>
+          <li>
+            <div className={styles.info_label}>Address</div>
+            <p className={styles.info_text}>Lviv. Cherchenca street</p>
+          </li>
+          <li>
+            <div className={styles.info_label}>Phone</div>
+            <p className={styles.info_text}>+380_(**)_***_****</p>
+          </li>
+          <li>
+            <div className={styles.info_label}>Email</div>
+            <p className={styles.info_text}>example@gmail.com</p>
+          </li>
+        </ul>
+      </section>
+      <section className={styles.contact_form}>
+        <div className={styles.contact_us_title}>
+          <TitleSection title="Contact Form" />
+        </div>
         <form onSubmit={onSubmit} className={styles.contact_form__wrapper}>
           <input
             value={name}
